@@ -18,6 +18,8 @@
                 <th>Attend</th>
                 <th>Absent</th>
             </tr>
+            
+            <tr></tr>
         </table>
     </body>
 </html>

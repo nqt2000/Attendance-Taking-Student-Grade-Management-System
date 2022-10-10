@@ -13,7 +13,7 @@
     </head>
     <body>
         <table>
-            ID: <input type="text" name="sid" value=""><br/>
+            Student ID: <input type="text" name="sid" value=""><br/>
             From: <input type="date" name="from" value=""><br/>
             To: <input type="date" name="to" value=""><br/>
             <input type="submits" value="Search">
