@@ -14,12 +14,21 @@
     <body>
         <table>
             <tr>
-                <th>Student</th>
-                <th>Attend</th>
-                <th>Absent</th>
+                <th>Index</th>
+                <th>Student Name</th>
+                <th>Roll Number</th>
+                <th>Attendance</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             
-            <tr></tr>
         </table>
     </body>
 </html>
