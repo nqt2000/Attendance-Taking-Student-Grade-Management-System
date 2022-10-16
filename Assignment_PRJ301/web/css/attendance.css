@@ -1,0 +1,40 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 16, 2022, 5:46:09 AM
+    Author     : Tunnnnnz
+*/
+
+table{
+    border: 1;
+    border-collapse:collapse;
+    text-align: center;
+}
+tr{
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+th{
+    background-color: dodgerblue;
+    border-left: 0.5px solid gainsboro;
+    border-right: 0.5px solid gainsboro;
+    font-family:sans-serif;
+    font-weight: normal;
+    width: 200px;
+}
+
+td{
+    border-left: 0.5px solid gainsboro;
+    border-right: 0.5px solid gainsboro;
+}
+
+img{
+    display: inline-block;
+    max-height: 150px;
+    max-width: 120px;
+    width: auto;
+    height: auto;
+}

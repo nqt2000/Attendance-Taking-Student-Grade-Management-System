@@ -4,8 +4,8 @@
     Author     : Tunnnnnz
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<link href="../../css/attendance.css" rel="stylesheet" type="text/css">
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,23 +13,97 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <table border = 1>
+        Slot: 1 <br/>
+        Subject: PRJ301<br/>
+        Class: PRJ301-M3<br/>
+        <table>
             <tr>
-                <th>Index</th>
-                <th>Student Name</th>
-                <th>Roll Number</th>
-                <th>Absent</th>
-                <th>Attendance</th>
+                <th>INDEX</th>
+                <th>IMAGE</th>
+                <th>STUDENT NAME</th>
+                <th>ROLL NUMBER</th>
+                <th>ATTENDANCE</th>
+                <th>NOTE</th>
             </tr>
-            <c:forEach items="${requestScope.students}" var="s">
-                <tr>
-                    <td></td>
-                    <td>${s.roll_number}</td>
-                    <td>${s.name}</td>
-                    <td>Absent<input type="checkbox" name="attendance" checked="checked"></td>
-                    <td>Attendance<input type="checkbox" name="attendace"></td>
-                </tr>
-            </c:forEach>
+            <tr>
+                <td>1</td>
+                <td>
+                    <img src="../../img/Avatar.png" alt=""/>
+                </td>
+                <td>Nguyen Quang Tuan</td>
+                <td>HE141164</td>
+                <td>
+                    <input type="radio" name="attend1" value="absent" checked="checked">Absent
+                    <input type="radio" name="attend1" value="attendance">Attendance
+                </td>
+                <td>
+                    <input type="text" name="note1">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>2</td>
+                <td>
+                    <img src="../../img/Avatar.png" alt=""/>
+                </td>
+                <td>Nguyen Quang Tuan</td>
+                <td>HE141164</td>
+                <td>
+                    <input type="radio" name="attend2" value="absent" checked="checked">Absent
+                    <input type="radio" name="attend2" value="attendance">Attendance
+                </td>
+                <td>
+                    <input type="text" name="note2">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>3</td>
+                <td>
+                    <img src="../../img/Avatar.png" alt=""/>
+                </td>
+                <td>Nguyen Quang Tuan</td>
+                <td>HE141164</td>
+                <td>
+                    <input type="radio" name="attend3" value="absent" checked="checked">Absent
+                    <input type="radio" name="attend3" value="attendance">Attendance
+                </td>
+                <td>
+                    <input type="text" name="note3">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>4</td>
+                <td>
+                    <img src="../../img/Avatar.png" alt=""/>
+                </td>
+                <td>Nguyen Quang Tuan</td>
+                <td>HE141164</td>
+                <td>
+                    <input type="radio" name="attend4" value="absent" checked="checked">Absent
+                    <input type="radio" name="attend4" value="attendance">Attendance
+                </td>
+                <td>
+                    <input type="text" name="note4">
+                </td>
+            </tr>
+            
+            <tr>
+                <td>5</td>
+                <td>
+                    <img src="../../img/Avatar.png" alt=""/>
+                </td>
+                <td>Nguyen Quang Tuan</td>
+                <td>HE141164</td>
+                <td>
+                    <input type="radio" name="attend5" value="absent" checked="checked">Absent
+                    <input type="radio" name="attend5" value="attendance">Attendance
+                </td>
+                <td>
+                    <input type="text" name="note5">
+                </td>
+            </tr>
         </table>
     </body>
 </html>
