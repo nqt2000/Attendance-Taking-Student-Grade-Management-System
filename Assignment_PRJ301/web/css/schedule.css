@@ -7,8 +7,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     Author     : Tunnnnnz
 */
 table{
-    /*display: block;*/
-    margin: 10px 10px 0px 10px;
+    margin: 0 auto;
     width: 1000px;
     border-collapse:collapse;
     border-spacing: 0;
@@ -16,8 +15,9 @@ table{
 }
 
 div{
+    width: 100%;
     text-align: center;
-    margin-left: 400px;
+    margin: 0 auto;
 }
 
 a{
@@ -30,7 +30,7 @@ table, th, td{
 }
 th{
     background-color: cornflowerblue;
-    width: 100px;
+    width: 1000px;
 }
 tr{
     text-align: center;

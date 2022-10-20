@@ -15,7 +15,7 @@
     </head>
     <body>
         <a>
-        ID: Nguyen Quang Tuan - HE141164<br/>
+            ID: Nguyen Quang Tuan - HE141164
         </a>
         <div>
             <table>
@@ -25,22 +25,32 @@
                             <option>2021</option>
                             <option>2022</option>
                         </select><br/>
-                        WEEK
-                        <select name="date">
-                            <option value="1">03/11 - 09/11</option>
-                            <option value="2">10/11 - 16/11</option>
-                            <option value="3">17/11 - 23/11</option>
-                            <option value="4">24/11 - 30/11</option>
-                            <option value="5">31/11 - 06/12</option>
+                    </th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+                <tr>
+                    <th style="text-align: left">WEEK
+                        <select>
+                            <option>03/11 - 09/11</option>
+                            <option>10/11 - 16/11</option>
+                            <option>17/11 - 23/11</option>
+                            <option>24/11 - 30/11</option>
+                            <option>31/11 - 06/12</option>
                         </select>
                     </th>
-                    <th>Monday<br/>03/11</th>
-                    <th>Tuesday<br/>04/11</th>
-                    <th>Wednesday<br/>05/11</th>
-                    <th>Thursday<br/>06/11</th>
-                    <th>Friday<br/>07/11</th>
-                    <th>Saturday<br/>08/11</th>
-                    <th>Sunday<br/>09/11</th>
+                    <th>03/11</th>
+                    <th>04/11</th>
+                    <th>05/11</th>
+                    <th>06/11</th>
+                    <th>07/11</th>
+                    <th>08/11</th>
+                    <th>09/11</th>
                 </tr>
                 <tr>
                     <td>Slot 1</td>

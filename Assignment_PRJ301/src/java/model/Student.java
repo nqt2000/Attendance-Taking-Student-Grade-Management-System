@@ -5,55 +5,44 @@
 package model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  *
  * @author Tunnnnnz
  */
 public class Student {
-    private String roll_number;
-    private String name;
-    private Date dob;
+    private int stid;
+    private String stname;
     private boolean gender;
-    private String address;
-    private String phone_number;
+    private Date dob;
+    private String rollnumber;
+    private String stphone;
     private String email;
+    private String stidcard;
+    private Date dateofissue;
+    private String placeofissue;
+    private String prname;
+    private String prphone;
+    private String premail;
+    private String prjob;
+    private ArrayList<Group> groups = new ArrayList<>();
+    private ArrayList<Attendance> atts = new ArrayList<>();
 
-    public Student() {
+    public int getStid() {
+        return stid;
     }
 
-    public Student(String roll_number, String name, Date dob, boolean gender, String address, String phone_number, String email) {
-        this.roll_number = roll_number;
-        this.name = name;
-        this.dob = dob;
-        this.gender = gender;
-        this.address = address;
-        this.phone_number = phone_number;
-        this.email = email;
+    public void setStid(int stid) {
+        this.stid = stid;
     }
 
-    public String getRoll_number() {
-        return roll_number;
+    public String getStname() {
+        return stname;
     }
 
-    public void setRoll_number(String roll_number) {
-        this.roll_number = roll_number;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getDob() {
-        return dob;
-    }
-
-    public void setDob(Date dob) {
-        this.dob = dob;
+    public void setStname(String stname) {
+        this.stname = stname;
     }
 
     public boolean isGender() {
@@ -64,20 +53,28 @@ public class Student {
         this.gender = gender;
     }
 
-    public String getAddress() {
-        return address;
+    public Date getDob() {
+        return dob;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 
-    public String getPhone_number() {
-        return phone_number;
+    public String getRollnumber() {
+        return rollnumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+    public void setRollnumber(String rollnumber) {
+        this.rollnumber = rollnumber;
+    }
+
+    public String getStphone() {
+        return stphone;
+    }
+
+    public void setStphone(String stphone) {
+        this.stphone = stphone;
     }
 
     public String getEmail() {
@@ -86,6 +83,62 @@ public class Student {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getStidcard() {
+        return stidcard;
+    }
+
+    public void setStidcard(String stidcard) {
+        this.stidcard = stidcard;
+    }
+
+    public Date getDateofissue() {
+        return dateofissue;
+    }
+
+    public void setDateofissue(Date dateofissue) {
+        this.dateofissue = dateofissue;
+    }
+
+    public String getPlaceofissue() {
+        return placeofissue;
+    }
+
+    public void setPlaceofissue(String placeofissue) {
+        this.placeofissue = placeofissue;
+    }
+
+    public String getPrname() {
+        return prname;
+    }
+
+    public void setPrname(String prname) {
+        this.prname = prname;
+    }
+
+    public String getPrphone() {
+        return prphone;
+    }
+
+    public void setPrphone(String prphone) {
+        this.prphone = prphone;
+    }
+
+    public String getPremail() {
+        return premail;
+    }
+
+    public void setPremail(String premail) {
+        this.premail = premail;
+    }
+
+    public String getPrjob() {
+        return prjob;
+    }
+
+    public void setPrjob(String prjob) {
+        this.prjob = prjob;
     }
     
     
