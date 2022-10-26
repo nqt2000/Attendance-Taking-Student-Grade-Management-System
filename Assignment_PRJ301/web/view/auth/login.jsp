@@ -5,8 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link href="../css/login.css" rel="stylesheet" type="text/css">
+<link href="css/login.css" rel="stylesheet" type="text/css">
 <!DOCTYPE html>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,7 +19,7 @@
             <div class="container">
                 <div class="left">
                     <div class="login">Login</div>
-                    <div class="eula">By logging in you agree to the ridiculously long terms that you didn't bother to read</div>
+                    <div class="eula">You are login to FAP of FPT Unitversity</div>
                 </div>
                 <div class="right">
                     <svg viewBox="0 0 320 300">
@@ -42,13 +44,15 @@
                     </defs>
                     <path d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
                     </svg>
-                    <div class="form">
-                        <label for="email">Email</label>
-                        <input type="email" id="email">
-                        <label for="password">Password</label>
-                        <input type="password" id="password">
-                        <input type="submit" id="submit" value="Submit">
-                    </div>
+                    <form action="login" method="POST">
+                        <div class="form">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password">
+                            <input type="submit" id="submit" value="Login">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
