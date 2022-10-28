@@ -10,8 +10,7 @@ import java.util.ArrayList;
  *
  * @author Tunnnnnz
  */
-class TimeSlot {
-
+public class TimeSlot {
     private int id;
     private String description;
     private ArrayList<Session> sessions = new ArrayList<>();

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Tunnnnnz
  */
-class Session {
+public class Session {
      private int id;
     private Group group;
     private Lecturer lecturer;
@@ -19,7 +19,7 @@ class Session {
     private TimeSlot slot;
     private Date date;
     private int index;
-    private boolean attanded;
+    private boolean attended;
     private ArrayList<Attendance> atts = new ArrayList<>();
 
     public int getId() {
@@ -78,12 +78,12 @@ class Session {
         this.index = index;
     }
 
-    public boolean isAttanded() {
-        return attanded;
+    public boolean isAttended() {
+        return attended;
     }
 
-    public void setAttanded(boolean attanded) {
-        this.attanded = attanded;
+    public void setAttended(boolean attanded) {
+        this.attended = attanded;
     }
 
     public ArrayList<Attendance> getAtts() {

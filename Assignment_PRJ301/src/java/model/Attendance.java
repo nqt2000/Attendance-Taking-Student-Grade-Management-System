@@ -8,7 +8,7 @@ package model;
  *
  * @author Tunnnnnz
  */
-class Attendance {
+public class Attendance {
     private Student student;
     private Session session;
     private boolean present;

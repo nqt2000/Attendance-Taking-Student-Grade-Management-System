@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="left">
                     <div class="login">Login</div>
-                    <div class="eula">You are login to FAP of FPT Unitversity</div>
+                    <div class="eula">You are login to FAP of <br/>FPT Unitversity</div>
                 </div>
                 <div class="right">
                     <svg viewBox="0 0 320 300">

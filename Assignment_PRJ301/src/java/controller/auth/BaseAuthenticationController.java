@@ -22,6 +22,7 @@ public abstract class BaseAuthenticationController extends HttpServlet {
     
     protected abstract void processPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
     protected abstract void processGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
+    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (isAuthenticated(req)) {

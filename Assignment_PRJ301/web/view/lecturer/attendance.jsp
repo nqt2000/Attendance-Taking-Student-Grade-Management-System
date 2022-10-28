@@ -4,6 +4,7 @@
     Author     : Tunnnnnz
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <link href="../../css/attendance.css" rel="stylesheet" type="text/css">
 <!DOCTYPE html>
@@ -13,97 +14,43 @@
         <title>JSP Page</title>
     </head>
     <body>
-        Slot: 1 <br/>
-        Subject: PRJ301<br/>
-        Class: PRJ301-M3<br/>
-        <table>
-            <tr>
-                <th>INDEX</th>
-                <th>IMAGE</th>
-                <th>STUDENT NAME</th>
-                <th>ROLL NUMBER</th>
-                <th>ATTENDANCE</th>
-                <th>NOTE</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>
-                    <img src="../../img/Avatar.png" alt=""/>
-                </td>
-                <td>Nguyen Quang Tuan</td>
-                <td>HE141164</td>
-                <td>
-                    <input type="radio" name="attend1" value="absent" checked="checked">Absent
-                    <input type="radio" name="attend1" value="attendance">Attendance
-                </td>
-                <td>
-                    <input type="text" name="note1">
-                </td>
-            </tr>
-            
-            <tr>
-                <td>2</td>
-                <td>
-                    <img src="../../img/Avatar.png" alt=""/>
-                </td>
-                <td>Nguyen Quang Tuan</td>
-                <td>HE141164</td>
-                <td>
-                    <input type="radio" name="attend2" value="absent" checked="checked">Absent
-                    <input type="radio" name="attend2" value="attendance">Attendance
-                </td>
-                <td>
-                    <input type="text" name="note2">
-                </td>
-            </tr>
-            
-            <tr>
-                <td>3</td>
-                <td>
-                    <img src="../../img/Avatar.png" alt=""/>
-                </td>
-                <td>Nguyen Quang Tuan</td>
-                <td>HE141164</td>
-                <td>
-                    <input type="radio" name="attend3" value="absent" checked="checked">Absent
-                    <input type="radio" name="attend3" value="attendance">Attendance
-                </td>
-                <td>
-                    <input type="text" name="note3">
-                </td>
-            </tr>
-            
-            <tr>
-                <td>4</td>
-                <td>
-                    <img src="../../img/Avatar.png" alt=""/>
-                </td>
-                <td>Nguyen Quang Tuan</td>
-                <td>HE141164</td>
-                <td>
-                    <input type="radio" name="attend4" value="absent" checked="checked">Absent
-                    <input type="radio" name="attend4" value="attendance">Attendance
-                </td>
-                <td>
-                    <input type="text" name="note4">
-                </td>
-            </tr>
-            
-            <tr>
-                <td>5</td>
-                <td>
-                    <img src="../../img/Avatar.png" alt=""/>
-                </td>
-                <td>Nguyen Quang Tuan</td>
-                <td>HE141164</td>
-                <td>
-                    <input type="radio" name="attend5" value="absent" checked="checked">Absent
-                    <input type="radio" name="attend5" value="attendance">Attendance
-                </td>
-                <td>
-                    <input type="text" name="note5">
-                </td>
-            </tr>
-        </table>
+        Slot: ${requestScope.ses.id} <br/>
+        Subject: ${requestScope.ses.group.subject.name}<br/>
+        Class: ${requestScope.ses.group.gname}<br/>
+        Room: ${requestScope.ses.room.name}<br/>
+        Time: ${requestScope.ses.slot.description} &emsp; ${requestScope.ses.date}<br/>
+        Attended: ${requestScope.ses.attended?"Yes":"No"}
+        <form action="takeatt" method="POST">
+            <input type="hidden" name="sesid" value="${param.id}"/>
+            <table border="1">
+                <tr>
+                    <td>Student Id</td>
+                    <td>Student Name</td>
+                    <td>Present</td>
+                    <td>Absent</td>
+                    <td>Description</td>
+                </tr>
+                <c:forEach items="${requestScope.atts}" var="a">
+                  <tr>
+                    <td>${a.student.stid}
+                        <input type="hidden" value="${a.student.stid}" name="stdid"/>
+                    </td>
+                    <td>${a.student.stname}</td>
+                    <td><input type="radio" 
+                               <c:if test="${a.present}">
+                               checked="checked" 
+                               </c:if>
+                               name="present${a.student.stid}" value="present" /></td>
+                    <td><input type="radio"
+                               <c:if test="${!a.present}">
+                               checked="checked" 
+                               </c:if>
+                               name="present${a.student.stid}" value="absent" /></td>
+                    <td><input type="" value="${a.description}" name="description${a.student.stid}"></td>
+                </tr>  
+                </c:forEach>
+            </table>
+            <input type="submit" value="Save"/>
+        </form>
     </body>
 </html>
