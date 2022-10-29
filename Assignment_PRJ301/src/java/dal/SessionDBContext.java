@@ -33,14 +33,14 @@ public class SessionDBContext extends DBContext<Session> {
             PreparedStatement stm_update_attended = connection.prepareStatement(sql_update_attended);
             stm_update_attended.setInt(1, model.getId());
             stm_update_attended.executeUpdate();
-            
+
             //remove old attandances 
             String sql_remove_attendences = "DELETE Attendance\n"
                     + "WHERE sesid = ?";
             PreparedStatement stm_remove_attendances = connection.prepareStatement(sql_remove_attendences);
             stm_remove_attendances.setInt(1, model.getId());
             stm_remove_attendances.executeUpdate();
-            
+
             //add new attandances
             for (Attendance att : model.getAtts()) {
                 String sql_insert_att = "INSERT INTO [Attendance]\n"
@@ -52,10 +52,11 @@ public class SessionDBContext extends DBContext<Session> {
                         + "           (?\n"
                         + "           ,?\n"
                         + "           ,?\n"
-                        + "           ,?,GETDATE())";
+                        + "           ,?\n"
+                        + "           ,GETDATE())";
                 PreparedStatement stm_insert_att = connection.prepareStatement(sql_insert_att);
                 stm_insert_att.setInt(1, model.getId());
-                stm_insert_att.setInt(2, att.getStudent().getStid());
+                stm_insert_att.setInt(2, att.getStudent().getStdid());
                 stm_insert_att.setBoolean(3, att.isPresent());
                 stm_insert_att.setString(4, att.getDescription());
                 stm_insert_att.executeUpdate();
@@ -95,8 +96,8 @@ public class SessionDBContext extends DBContext<Session> {
 
     @Override
     public Session get(int id) {
-        try{
-        String sql = "SELECT ses.sesid,ses.date,ses.[index],ses.attended \n"
+        try {
+            String sql = "SELECT ses.sesid,ses.date,ses.[index],ses.attended,taker \n"
                     + "	,g.gid,g.gname\n"
                     + "	,sub.subid,sub.subname\n"
                     + "	,l.lid,l.lname\n"
@@ -109,7 +110,7 @@ public class SessionDBContext extends DBContext<Session> {
                     + "	INNER JOIN Lecturer l ON l.lid = ses.lid\n"
                     + "	INNER JOIN [Subject] sub ON sub.subid = g.subid\n"
                     + "WHERE ses.sesid = ?";
-        PreparedStatement stm = connection.prepareStatement(sql);
+            PreparedStatement stm = connection.prepareStatement(sql);
             stm.setInt(1, id);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
@@ -118,6 +119,7 @@ public class SessionDBContext extends DBContext<Session> {
                 ses.setDate(rs.getDate("date"));
                 ses.setIndex(rs.getInt("index"));
                 ses.setAttended(rs.getBoolean("attended"));
+                ses.setTaker(rs.getString("taker"));
                 Group g = new Group();
                 ses.setGroup(g);
                 g.setGid(rs.getInt("gid"));

@@ -42,8 +42,8 @@ public class AttendanceDBContext extends DBContext<Attendance> {
                 att.setSession(ses);
                 att.setPresent(rs.getBoolean("present"));
                 att.setDescription(rs.getString("description"));
-                s.setStid(rs.getInt("stdid"));
-                s.setStname(rs.getString("stdname"));
+                s.setStdid(rs.getInt("stdid"));
+                s.setStdname(rs.getString("stdname"));
                 ses.setId(sesid);
                 atts.add(att);
             }

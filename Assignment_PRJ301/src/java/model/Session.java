@@ -20,10 +20,19 @@ public class Session {
     private Date date;
     private int index;
     private boolean attended;
+    private String taker;
     private ArrayList<Attendance> atts = new ArrayList<>();
 
     public int getId() {
         return id;
+    }
+
+    public String getTaker() {
+        return taker;
+    }
+
+    public void setTaker(String taker) {
+        this.taker = taker;
     }
 
     public void setId(int id) {

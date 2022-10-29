@@ -12,37 +12,68 @@ import java.util.ArrayList;
  * @author Tunnnnnz
  */
 public class Student {
-    private int stid;
-    private String stname;
+
+    private int stdid;
+    private String stdname;
     private boolean gender;
     private Date dob;
     private String rollnumber;
-    private String stphone;
-    private String email;
-    private String stidcard;
+    private String stdphone;
+    private String stdemail;
+    private String address;
+    private String idcard;
     private Date dateofissue;
     private String placeofissue;
-    private String prname;
-    private String prphone;
-    private String premail;
-    private String prjob;
+    private Parent parent;
     private ArrayList<Group> groups = new ArrayList<>();
     private ArrayList<Attendance> atts = new ArrayList<>();
 
-    public int getStid() {
-        return stid;
+    public Parent getParent() {
+        return parent;
     }
 
-    public void setStid(int stid) {
-        this.stid = stid;
+    public void setParent(Parent parent) {
+        this.parent = parent;
     }
 
-    public String getStname() {
-        return stname;
+    public ArrayList<Group> getGroups() {
+        return groups;
     }
 
-    public void setStname(String stname) {
-        this.stname = stname;
+    public void setGroups(ArrayList<Group> groups) {
+        this.groups = groups;
+    }
+
+    public ArrayList<Attendance> getAtts() {
+        return atts;
+    }
+
+    public void setAtts(ArrayList<Attendance> atts) {
+        this.atts = atts;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getStdid() {
+        return stdid;
+    }
+
+    public void setStdid(int stdid) {
+        this.stdid = stdid;
+    }
+
+    public String getStdname() {
+        return stdname;
+    }
+
+    public void setStdname(String stdname) {
+        this.stdname = stdname;
     }
 
     public boolean isGender() {
@@ -69,28 +100,28 @@ public class Student {
         this.rollnumber = rollnumber;
     }
 
-    public String getStphone() {
-        return stphone;
+    public String getStdphone() {
+        return stdphone;
     }
 
-    public void setStphone(String stphone) {
-        this.stphone = stphone;
+    public void setStdphone(String stdphone) {
+        this.stdphone = stdphone;
     }
 
-    public String getEmail() {
-        return email;
+    public String getStdemail() {
+        return stdemail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setStdemail(String stdemail) {
+        this.stdemail = stdemail;
     }
 
-    public String getStidcard() {
-        return stidcard;
+    public String getIdcard() {
+        return idcard;
     }
 
-    public void setStidcard(String stidcard) {
-        this.stidcard = stidcard;
+    public void setIdcard(String idcard) {
+        this.idcard = idcard;
     }
 
     public Date getDateofissue() {
@@ -108,38 +139,4 @@ public class Student {
     public void setPlaceofissue(String placeofissue) {
         this.placeofissue = placeofissue;
     }
-
-    public String getPrname() {
-        return prname;
-    }
-
-    public void setPrname(String prname) {
-        this.prname = prname;
-    }
-
-    public String getPrphone() {
-        return prphone;
-    }
-
-    public void setPrphone(String prphone) {
-        this.prphone = prphone;
-    }
-
-    public String getPremail() {
-        return premail;
-    }
-
-    public void setPremail(String premail) {
-        this.premail = premail;
-    }
-
-    public String getPrjob() {
-        return prjob;
-    }
-
-    public void setPrjob(String prjob) {
-        this.prjob = prjob;
-    }
-    
-    
 }

@@ -64,6 +64,7 @@ public class TakeAttendanceController extends HttpServlet {
             throws ServletException, IOException {
         Session ses = new Session();
         ses.setId(Integer.parseInt(request.getParameter("sesid")));
+        ses.setTaker(request.getParameter("taker"));
 
         String[] stdids = request.getParameterValues("stdid");
         for (String stdid : stdids) {
@@ -71,7 +72,7 @@ public class TakeAttendanceController extends HttpServlet {
             Student s = new Student();
             a.setStudent(s);
             a.setSession(ses);
-            s.setStid(Integer.parseInt(stdid));
+            s.setStdid(Integer.parseInt(stdid));
             a.setPresent(request.getParameter("present" + stdid).equals("present"));
             a.setDescription(request.getParameter("description" + stdid));
             ses.getAtts().add(a);

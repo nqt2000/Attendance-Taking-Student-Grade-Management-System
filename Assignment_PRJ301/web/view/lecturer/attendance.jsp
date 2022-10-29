@@ -20,6 +20,7 @@
         Room: ${requestScope.ses.room.name}<br/>
         Time: ${requestScope.ses.slot.description} &emsp; ${requestScope.ses.date}<br/>
         Attended: ${requestScope.ses.attended?"Yes":"No"}
+        Taker: ${sessionScope.account.displayname}
         <form action="takeatt" method="POST">
             <input type="hidden" name="sesid" value="${param.id}"/>
             <table border="1">
@@ -32,21 +33,21 @@
                 </tr>
                 <c:forEach items="${requestScope.atts}" var="a">
                   <tr>
-                    <td>${a.student.stid}
-                        <input type="hidden" value="${a.student.stid}" name="stdid"/>
+                    <td>${a.student.stdid}
+                        <input type="hidden" value="${a.student.stdid}" name="stdid"/>
                     </td>
-                    <td>${a.student.stname}</td>
+                    <td>${a.student.stdname}</td>
                     <td><input type="radio" 
                                <c:if test="${a.present}">
                                checked="checked" 
                                </c:if>
-                               name="present${a.student.stid}" value="present" /></td>
+                               name="present${a.student.stdid}" value="present" /></td>
                     <td><input type="radio"
                                <c:if test="${!a.present}">
                                checked="checked" 
                                </c:if>
-                               name="present${a.student.stid}" value="absent" /></td>
-                    <td><input type="" value="${a.description}" name="description${a.student.stid}"></td>
+                               name="present${a.student.stdid}" value="absent" /></td>
+                    <td><input type="" value="${a.description}" name="description${a.student.stdid}"></td>
                 </tr>  
                 </c:forEach>
             </table>
