@@ -58,15 +58,15 @@
              <table border="1" style="text-align: left;">
                 <tr>
                     <th>Name</th>
-                    <td>${requestScope.par.prname}</td>
+                    <td>${requestScope.stds.parent.prname}</td>
                 </tr>
                 <tr>
                     <th>Phone number</th>
-                    <td>${requestScope.par.prphone}</td>
+                    <td>${requestScope.stds.parent.prphone}</td>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>${requestScope.par.premail}</td>
+                    <td>${requestScope.stds.parent.premail}</td>
                 </tr>
             </table>
         </form>

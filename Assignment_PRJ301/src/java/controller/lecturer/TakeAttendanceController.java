@@ -11,7 +11,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
+import model.Account;
 import model.Attendance;
 import model.Session;
 import model.Student;
@@ -66,6 +68,9 @@ public class TakeAttendanceController extends HttpServlet {
         ses.setId(Integer.parseInt(request.getParameter("sesid")));
         ses.setTaker(request.getParameter("taker"));
 
+        HttpSession session = request.getSession();
+        Account account = (Account) session.getAttribute("account");
+
         String[] stdids = request.getParameterValues("stdid");
         for (String stdid : stdids) {
             Attendance a = new Attendance();
@@ -75,6 +80,7 @@ public class TakeAttendanceController extends HttpServlet {
             s.setStdid(Integer.parseInt(stdid));
             a.setPresent(request.getParameter("present" + stdid).equals("present"));
             a.setDescription(request.getParameter("description" + stdid));
+            a.setTaker(request.getParameter("taker") + account.getDisplayname() );
             ses.getAtts().add(a);
         }
 

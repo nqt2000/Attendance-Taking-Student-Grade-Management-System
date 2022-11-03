@@ -13,7 +13,17 @@ public class Attendance {
     private Session session;
     private boolean present;
     private String description;
+    private String taker;
 
+    public String getTaker() {
+        return taker;
+    }
+
+    public void setTaker(String taker) {
+        this.taker = taker;
+    }
+
+    
     public Student getStudent() {
         return student;
     }

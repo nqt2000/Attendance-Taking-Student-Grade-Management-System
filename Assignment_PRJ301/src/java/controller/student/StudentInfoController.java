@@ -63,9 +63,6 @@ public class StudentInfoController extends HttpServlet {
         StudentDBContext stdDB = new StudentDBContext();
         Student stds = stdDB.get(stdid);
         request.setAttribute("stds", stds);
-        ParentDBContext parDB = new ParentDBContext();
-        Parent par =  parDB.get(stdid);
-        request.setAttribute("par", par);
         request.getRequestDispatcher("../view/student/info.jsp").forward(request, response);
         
     } 

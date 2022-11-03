@@ -37,12 +37,14 @@ public class StudentDBContext extends DBContext<Student> {
     @Override
     public Student get(int id) {
         try {
-            String sql = "SELECT s.stdname, s.stdgender, s.dob, s.stdphone , s.stdemail, \n"
-                    + "s.[address], s.idcard, s.dateofissue, \n"
+            String sql = "SELECT s.stdname, s.stdgender, s.dob, s.stdphone , s.stdemail,\n"
+                    + "s.[address], s.idcard, s.dateofissue,\n"
                     + "s.placeofissue, p.prname, p.prphone, p.premail\n"
                     + "FROM Student s\n"
-                    + "INNER JOIN Parent p ON p.prid = s.prid";
+                    + "INNER JOIN Parent p ON p.prid = s.prid\n"
+                    + "WHERE s.stdid = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, id);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
                 Student stud = new Student();
@@ -56,11 +58,12 @@ public class StudentDBContext extends DBContext<Student> {
                 stud.setIdcard(rs.getString("idcard"));
                 stud.setDateofissue(rs.getDate("dateofissue"));
                 stud.setPlaceofissue(rs.getString("placeofissue"));
+                
                 Parent p = new Parent();
-                stud.setParent(p);
                 p.setPrname(rs.getString("prname"));
                 p.setPremail(rs.getString("premail"));
                 p.setPrphone(rs.getString("prphone"));
+                stud.setParent(p);
                 return stud;
             }
         } catch (SQLException ex) {

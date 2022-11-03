@@ -48,17 +48,20 @@ public class SessionDBContext extends DBContext<Session> {
                         + "           ,[stdid]\n"
                         + "           ,[present]\n"
                         + "           ,[description],record_time)\n"
+                        + "           ,[taker]\n"
                         + "     VALUES\n"
                         + "           (?\n"
                         + "           ,?\n"
                         + "           ,?\n"
                         + "           ,?\n"
-                        + "           ,GETDATE())";
+                        + "           ,GETDATE()\n"
+                        + "           ,?)";
                 PreparedStatement stm_insert_att = connection.prepareStatement(sql_insert_att);
                 stm_insert_att.setInt(1, model.getId());
                 stm_insert_att.setInt(2, att.getStudent().getStdid());
                 stm_insert_att.setBoolean(3, att.isPresent());
                 stm_insert_att.setString(4, att.getDescription());
+                stm_insert_att.setString(5, model.getTaker());
                 stm_insert_att.executeUpdate();
             }
 
